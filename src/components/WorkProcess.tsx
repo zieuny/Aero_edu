@@ -60,12 +60,12 @@ const WorkProcessManager: React.FC = () => {
     <div className="p-8 max-w-5xl mx-auto">
       <div className="flex justify-between items-center mb-8">
         <div>
-          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">Work Processes</h2>
-          <p className="text-slate-500 mt-1">Standard workflows and knowledge base for new recruits.</p>
+          <h2 className="text-3xl font-black text-hanwha-black tracking-tight">Work Processes</h2>
+          <p className="text-hanwha-gray mt-1 font-medium">Standard workflows and knowledge base for new recruits.</p>
         </div>
         <button
           onClick={addProcess}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-all font-medium shadow-sm active:scale-95"
+          className="bg-hanwha-orange hover:bg-hanwha-orange/90 text-white px-4 py-2 rounded-xl flex items-center gap-2 transition-all font-black shadow-sm active:scale-95"
         >
           <Plus className="w-4 h-4" />
           Add Process
@@ -83,16 +83,16 @@ const WorkProcessManager: React.FC = () => {
               key={process.id}
               className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="p-5 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
+              <div className="p-5 border-b border-slate-100 flex justify-between items-center bg-hanwha-light">
                 <div>
-                  <span className={`text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-full border ${
+                  <span className={`text-[10px] uppercase tracking-widest font-black px-2 py-0.5 rounded border ${
                     process.category === 'VLA' ? 'bg-amber-50 text-amber-600 border-amber-200' :
-                    process.category === 'Autonomous' ? 'bg-blue-50 text-blue-600 border-blue-200' :
+                    process.category === 'Autonomous' ? 'bg-hanwha-orange/5 text-hanwha-orange border-hanwha-orange/20' :
                     'bg-slate-50 text-slate-600 border-slate-200'
                   }`}>
                     {process.category}
                   </span>
-                  <h3 className="text-lg font-semibold text-slate-800 mt-1">{process.title}</h3>
+                  <h3 className="text-lg font-black text-hanwha-black mt-1 tracking-tight">{process.title}</h3>
                 </div>
                 <button 
                   onClick={() => setProcesses(prev => prev.filter(p => p.id !== process.id))}
@@ -111,26 +111,26 @@ const WorkProcessManager: React.FC = () => {
                     {step.completed ? (
                       <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0" />
                     ) : (
-                      <Circle className="w-5 h-5 text-slate-300 shrink-0 group-hover:text-blue-400" />
+                      <Circle className="w-5 h-5 text-slate-300 shrink-0 group-hover:text-hanwha-orange" />
                     )}
-                    <span className={`text-sm ${step.completed ? 'text-slate-400 line-through' : 'text-slate-700'}`}>
+                    <span className={`text-sm font-medium ${step.completed ? 'text-slate-400 line-through' : 'text-hanwha-black'}`}>
                       {step.label}
                     </span>
                   </button>
                 ))}
                 
-                <button className="text-blue-600 text-xs font-medium flex items-center gap-1 mt-4 hover:underline">
+                <button className="text-hanwha-orange text-xs font-black flex items-center gap-1 mt-4 hover:underline uppercase tracking-widest">
                   <Plus className="w-3 h-3" /> Add Step
                 </button>
               </div>
-              <div className="px-5 py-3 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+              <div className="px-5 py-3 bg-hanwha-light border-t border-slate-100 flex items-center justify-between">
                 <div className="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden">
                   <div 
-                    className="bg-emerald-500 h-full transition-all duration-500" 
+                    className="bg-hanwha-orange h-full transition-all duration-500" 
                     style={{ width: `${(process.steps.filter(s => s.completed).length / process.steps.length) * 100}%` }}
                   />
                 </div>
-                <span className="text-[10px] font-bold text-slate-400 ml-4 whitespace-nowrap shrink-0">
+                <span className="text-[10px] font-black text-hanwha-gray ml-4 whitespace-nowrap shrink-0 tracking-widest">
                   {process.steps.filter(s => s.completed).length} / {process.steps.length}
                 </span>
               </div>

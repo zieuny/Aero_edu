@@ -51,12 +51,12 @@ const SnippetManager: React.FC = () => {
     <div className="p-8 max-w-6xl mx-auto">
       <div className="flex justify-between items-center mb-8">
         <div>
-          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">Code Snippets</h2>
-          <p className="text-slate-500 mt-1">Validated code blocks for ROS2 interfaces and sensor drivers.</p>
+          <h2 className="text-3xl font-black text-hanwha-black tracking-tight">Code Snippets</h2>
+          <p className="text-hanwha-gray mt-1 font-medium">Validated code blocks for ROS2 interfaces and sensor drivers.</p>
         </div>
         <button
           onClick={addSnippet}
-          className="bg-slate-900 hover:bg-black text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-all font-medium shadow-sm"
+          className="bg-hanwha-orange hover:bg-hanwha-orange/90 text-white px-4 py-2 rounded-xl flex items-center gap-2 transition-all font-black shadow-sm active:scale-95"
         >
           <Plus className="w-4 h-4" />
           Add Snippet
@@ -74,14 +74,14 @@ const SnippetManager: React.FC = () => {
               key={snippet.id}
               className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col"
             >
-              <div className="p-5 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
+              <div className="p-5 border-b border-slate-100 flex justify-between items-center bg-hanwha-light">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-slate-800 rounded-lg flex items-center justify-center">
-                    <Terminal className="w-4 h-4 text-blue-400" />
+                  <div className="w-8 h-8 bg-hanwha-black rounded-lg flex items-center justify-center border border-white/5">
+                    <Terminal className="w-4 h-4 text-hanwha-orange" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-800 leading-tight">{snippet.title}</h3>
-                    <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">{snippet.language}</span>
+                    <h3 className="font-black text-hanwha-black leading-tight tracking-tight">{snippet.title}</h3>
+                    <span className="text-[10px] text-hanwha-orange font-black uppercase tracking-widest">{snippet.language}</span>
                   </div>
                 </div>
                 <button 
@@ -92,14 +92,14 @@ const SnippetManager: React.FC = () => {
                 </button>
               </div>
               <div className="p-5 flex-1 flex flex-col gap-3">
-                <p className="text-sm text-slate-600 line-clamp-2">{snippet.description}</p>
+                <p className="text-sm text-hanwha-gray line-clamp-2 font-medium">{snippet.description}</p>
                 <div className="relative group/code flex-1 min-h-[150px]">
-                  <pre className="bg-slate-900 rounded-xl p-4 font-mono text-[11px] text-slate-300 h-full overflow-x-auto whitespace-pre">
+                  <pre className="bg-hanwha-black rounded-xl p-4 font-mono text-[11px] text-slate-400 h-full overflow-x-auto whitespace-pre group-hover:text-slate-200 transition-colors">
                     {snippet.code}
                   </pre>
                   <button
                     onClick={() => copyCode(snippet.code, snippet.id)}
-                    className="absolute top-2 right-2 p-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-400 hover:text-white hover:bg-slate-700 opacity-0 group-hover/code:opacity-100 transition-all shadow-lg"
+                    className="absolute top-2 right-2 p-2 rounded-lg bg-hanwha-dark border border-white/10 text-slate-400 hover:text-white hover:bg-hanwha-black opacity-0 group-hover/code:opacity-100 transition-all shadow-lg"
                   >
                     {copiedId === snippet.id ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
                   </button>

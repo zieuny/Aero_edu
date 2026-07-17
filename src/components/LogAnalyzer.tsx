@@ -38,7 +38,7 @@ const LogAnalyzer: React.FC = () => {
           <div className="flex items-center gap-1.5 px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full border border-emerald-100 text-[11px] font-bold">
             <CheckCircle2 className="w-3.5 h-3.5" /> ROS2 Compatible
           </div>
-          <div className="flex items-center gap-1.5 px-3 py-1 bg-blue-50 text-blue-600 rounded-full border border-blue-100 text-[11px] font-bold">
+          <div className="flex items-center gap-1.5 px-3 py-1 bg-hanwha-orange/5 text-hanwha-orange rounded-full border border-hanwha-orange/10 text-[11px] font-bold">
             <Sparkles className="w-3.5 h-3.5" /> AI Powered
           </div>
         </div>
@@ -50,7 +50,7 @@ const LogAnalyzer: React.FC = () => {
             <div className="flex-1 flex flex-col">
               <div className="flex items-center justify-between mb-2">
                 <label className="text-sm font-bold text-slate-700">Log Data Input</label>
-                <button className="text-[11px] font-bold text-blue-600 flex items-center gap-1 hover:underline">
+                <button className="text-[11px] font-bold text-hanwha-orange flex items-center gap-1 hover:underline">
                   <Upload className="w-3 h-3" /> Upload .log / .csv
                 </button>
               </div>
@@ -58,14 +58,14 @@ const LogAnalyzer: React.FC = () => {
                 value={logContent}
                 onChange={(e) => setLogContent(e.target.value)}
                 placeholder="Paste ROS2 logs or simulation output here..."
-                className="flex-1 w-full bg-slate-900 border border-slate-800 rounded-2xl p-6 font-mono text-sm text-blue-400 focus:ring-2 focus:ring-blue-500 outline-none resize-none leading-relaxed"
+                className="flex-1 w-full bg-hanwha-black border border-slate-800 rounded-2xl p-6 font-mono text-sm text-hanwha-orange focus:ring-2 focus:ring-hanwha-orange outline-none resize-none leading-relaxed"
               />
             </div>
 
             <button
               onClick={handleAnalyze}
               disabled={isAnalyzing || !logContent.trim()}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl flex items-center justify-center gap-3 font-bold transition-all disabled:opacity-50 group"
+              className="w-full bg-hanwha-orange hover:bg-hanwha-orange/90 text-white py-4 rounded-2xl flex items-center justify-center gap-3 font-bold transition-all disabled:opacity-50 group"
             >
               {isAnalyzing ? (
                 <>
@@ -84,24 +84,24 @@ const LogAnalyzer: React.FC = () => {
 
         <div className="bg-white border border-slate-200 rounded-3xl shadow-sm flex flex-col overflow-hidden relative">
           {!analysis && !isAnalyzing && (
-            <div className="absolute inset-0 bg-slate-50/50 backdrop-blur-[2px] flex flex-col items-center justify-center p-12 text-center">
+            <div className="absolute inset-0 bg-hanwha-light/50 backdrop-blur-[2px] flex flex-col items-center justify-center p-12 text-center">
               <div className="w-20 h-20 bg-white border border-slate-200 rounded-3xl flex items-center justify-center mb-6 shadow-sm">
                 <AlertCircle className="w-10 h-10 text-slate-300" />
               </div>
-              <h3 className="text-lg font-bold text-slate-800">No Analysis Results</h3>
-              <p className="text-sm text-slate-500 mt-2 max-w-xs">
+              <h3 className="text-lg font-bold text-hanwha-black">No Analysis Results</h3>
+              <p className="text-sm text-hanwha-gray mt-2 max-w-xs font-medium">
                 Paste your log data and click the analysis button to identify root causes and suggested fixes.
               </p>
             </div>
           )}
           
           <div className="p-4 border-b border-slate-100 bg-white flex justify-between items-center shrink-0">
-            <span className="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">
-              <ChevronRight className="w-4 h-4 text-blue-500" /> Analysis Report
+            <span className="text-xs font-bold text-hanwha-gray uppercase tracking-widest flex items-center gap-2">
+              <ChevronRight className="w-4 h-4 text-hanwha-orange" /> Analysis Report
             </span>
           </div>
           
-          <div className="flex-1 p-8 overflow-y-auto prose prose-slate max-w-none bg-slate-50/30">
+          <div className="flex-1 p-8 overflow-y-auto prose prose-slate max-w-none bg-hanwha-light/30">
             {isAnalyzing ? (
               <div className="space-y-4 animate-pulse">
                 <div className="h-6 bg-slate-200 rounded w-1/3"></div>

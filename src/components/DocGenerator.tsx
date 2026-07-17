@@ -56,12 +56,12 @@ const DocGenerator: React.FC = () => {
                     onClick={() => setTemplate(t)}
                     className={`text-left px-4 py-3 rounded-xl border text-sm transition-all flex items-center justify-between group ${
                       template === t 
-                        ? 'bg-blue-50 border-blue-200 text-blue-700 font-bold' 
+                        ? 'bg-hanwha-orange/5 border-hanwha-orange/30 text-hanwha-orange font-bold' 
                         : 'border-slate-100 hover:border-slate-300 text-slate-600'
                     }`}
                   >
                     {t}
-                    <FileText className={`w-4 h-4 ${template === t ? 'text-blue-500' : 'text-slate-300 group-hover:text-slate-400'}`} />
+                    <FileText className={`w-4 h-4 ${template === t ? 'text-hanwha-orange' : 'text-slate-300 group-hover:text-slate-400'}`} />
                   </button>
                 ))}
               </div>
@@ -73,14 +73,14 @@ const DocGenerator: React.FC = () => {
                 value={inputData}
                 onChange={(e) => setInputData(e.target.value)}
                 placeholder="Paste your rough notes, data points, or test results here..."
-                className="flex-1 w-full bg-slate-50 border border-slate-200 rounded-xl p-4 text-sm focus:ring-2 focus:ring-blue-500 outline-none resize-none"
+                className="flex-1 w-full bg-hanwha-light border border-slate-200 rounded-xl p-4 text-sm focus:ring-2 focus:ring-hanwha-orange outline-none resize-none"
               />
             </div>
 
             <button
               onClick={handleGenerate}
               disabled={isGenerating || !inputData.trim()}
-              className="w-full bg-slate-900 hover:bg-black text-white py-4 rounded-2xl flex items-center justify-center gap-3 font-bold transition-all disabled:opacity-50 disabled:cursor-not-allowed group shadow-lg"
+              className="w-full bg-hanwha-black hover:bg-black text-white py-4 rounded-xl flex items-center justify-center gap-3 font-bold transition-all disabled:opacity-50 disabled:cursor-not-allowed group shadow-lg"
             >
               {isGenerating ? (
                 <>
@@ -89,7 +89,7 @@ const DocGenerator: React.FC = () => {
                 </>
               ) : (
                 <>
-                  <Wand2 className="w-5 h-5 text-blue-400 group-hover:scale-110 transition-transform" />
+                  <Wand2 className="w-5 h-5 text-hanwha-orange group-hover:scale-110 transition-transform" />
                   Generate Document Draft
                 </>
               )}
@@ -99,8 +99,8 @@ const DocGenerator: React.FC = () => {
 
         {/* Output Section */}
         <div className="bg-white border border-slate-200 rounded-2xl shadow-sm flex flex-col overflow-hidden">
-          <div className="p-4 border-b border-slate-100 bg-slate-50 flex justify-between items-center">
-            <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Document Preview</span>
+          <div className="p-4 border-b border-slate-100 bg-hanwha-light flex justify-between items-center">
+            <span className="text-xs font-bold text-hanwha-gray uppercase tracking-widest">Document Preview</span>
             {generatedDoc && (
               <button 
                 onClick={() => {
@@ -111,7 +111,7 @@ const DocGenerator: React.FC = () => {
                   a.download = `${template.replace(/\s/g, '_')}.md`;
                   a.click();
                 }}
-                className="text-xs font-bold text-blue-600 hover:bg-blue-50 px-3 py-1.5 rounded-lg border border-blue-100 flex items-center gap-2"
+                className="text-xs font-bold text-hanwha-orange hover:bg-hanwha-orange/5 px-3 py-1.5 rounded-lg border border-hanwha-orange/20 flex items-center gap-2"
               >
                 <Download className="w-3.5 h-3.5" />
                 Download .md

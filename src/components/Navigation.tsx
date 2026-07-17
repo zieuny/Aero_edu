@@ -18,15 +18,15 @@ const Navigation: React.FC<NavigationProps> = ({ activeTab, setActiveTab }) => {
   ];
 
   return (
-    <nav className="w-64 bg-slate-900 text-slate-300 h-screen flex flex-col border-r border-slate-800">
+    <nav className="w-64 bg-hanwha-black text-slate-400 h-screen flex flex-col border-r border-white/10">
       <div className="p-6">
-        <h1 className="text-xl font-bold text-white flex items-center gap-2">
-          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-            <Search className="w-5 h-5" />
+        <h1 className="text-xl font-black text-white flex items-center gap-2">
+          <div className="w-8 h-8 bg-hanwha-orange rounded-md flex items-center justify-center">
+            <Search className="w-5 h-5 text-white" />
           </div>
           AeroAuto
         </h1>
-        <p className="text-xs text-slate-500 mt-1 uppercase tracking-widest font-semibold">Pilot Hub</p>
+        <p className="text-[10px] text-hanwha-orange mt-1 uppercase tracking-widest font-black">Pilot Hub</p>
       </div>
 
       <div className="flex-1 mt-4 px-3 space-y-1">
@@ -34,26 +34,26 @@ const Navigation: React.FC<NavigationProps> = ({ activeTab, setActiveTab }) => {
           <button
             key={item.id}
             onClick={() => setActiveTab(item.id)}
-            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 group ${
+            className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 group ${
               activeTab === item.id
-                ? 'bg-blue-600/10 text-blue-400 font-medium border border-blue-600/20'
-                : 'hover:bg-slate-800/50 hover:text-white'
+                ? 'bg-hanwha-orange/10 text-hanwha-orange font-bold'
+                : 'hover:bg-white/5 hover:text-white'
             }`}
           >
-            <item.icon className={`w-5 h-5 ${activeTab === item.id ? 'text-blue-400' : 'text-slate-500 group-hover:text-slate-300'}`} />
-            {item.label}
+            <item.icon className={`w-5 h-5 ${activeTab === item.id ? 'text-hanwha-orange' : 'text-slate-500 group-hover:text-slate-300'}`} />
+            <span className="text-sm">{item.label}</span>
           </button>
         ))}
       </div>
 
-      <div className="p-6 mt-auto border-t border-slate-800">
+      <div className="p-6 mt-auto border-t border-white/5">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 font-bold">
+          <div className="w-10 h-10 rounded-lg bg-hanwha-dark border border-white/10 flex items-center justify-center text-hanwha-orange font-black">
             JD
           </div>
           <div className="flex-1 overflow-hidden">
-            <p className="text-sm font-medium text-white truncate">Junior Developer</p>
-            <p className="text-xs text-slate-500 truncate">Autonomous SW Team</p>
+            <p className="text-sm font-bold text-white truncate">Junior Developer</p>
+            <p className="text-[10px] text-hanwha-gray truncate uppercase font-bold tracking-tighter">Autonomous SW Team</p>
           </div>
         </div>
       </div>
