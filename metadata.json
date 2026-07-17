@@ -1,0 +1,6 @@
+{
+  "name": "AeroAuto Pilot",
+  "description": "Professional productivity hub for autonomous software developers featuring task guides, prompt libraries, and AI-powered technical document generation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
